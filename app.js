@@ -1,7 +1,7 @@
 let userScore = 0;
 let computerScore = 0;
-const yourScore_span = document.getElementById("user-score");
-const compScore_span = document.getElementById("comp-score");
+const userScore_span = document.getElementById("user-score");
+const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
@@ -25,8 +25,8 @@ function win(userChoice, computerChoice) {
     const smallCompWord = "comp".fontsize(3).sup();
     const userChoice_div = document.getElementById(userChoice);
     userScore++;
-    yourScore_span.innerHTML = userScore;
-    compScore_span.innerHTML = computerScore;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}.  You win!`
     userChoice_div.classList.add('green-glow');
     setTimeout(() => userChoice_div.classList.remove('green-glow'), 400);
@@ -37,8 +37,8 @@ function lose(userChoice, computerChoice) {
     const smallCompWord = "comp".fontsize(3).sup();
     const userChoice_div = document.getElementById(userChoice);
     computerScore++;
-    yourScore_span.innerHTML = userScore;
-    compScore_span.innerHTML = computerScore;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord}.  You lost...`
     userChoice_div.classList.add('red-glow');
     setTimeout(() => userChoice_div.classList.remove('red-glow'), 400);
